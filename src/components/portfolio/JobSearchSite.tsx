@@ -227,16 +227,12 @@ export default function JobSearchSite() {
       </div>
 
       {/* Keyframe animations */}
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
-      `}</style>
+      ` }} />
     </div>
   );
 }

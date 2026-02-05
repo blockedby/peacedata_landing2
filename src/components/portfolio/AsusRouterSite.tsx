@@ -219,27 +219,16 @@ export default function AsusRouterSite() {
       </div>
 
       {/* Keyframe animations */}
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes barGrow {
-          from {
-            transform: scaleY(0);
-            transform-origin: bottom;
-          }
-          to {
-            transform: scaleY(1);
-            transform-origin: bottom;
-          }
+          from { transform: scaleY(0); transform-origin: bottom; }
+          to { transform: scaleY(1); transform-origin: bottom; }
         }
         @keyframes wifiPulse {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.6;
-          }
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.6; }
         }
-      `}</style>
+      ` }} />
     </div>
   );
 }
