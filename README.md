@@ -41,6 +41,7 @@ Use [LiquidGlassGuideline.md](LiquidGlassGuideline.md) as a reference.
 
 - TypeScript
 - React 19
+- bun
 - Next.js
 - Tailwind CSS
 - React Icons
