@@ -1,1 +1,210 @@
 @import "tailwindcss";
+
+/* ========================================================================
+   Tailwind v4 — Custom theme tokens (CSS-native config)
+   ======================================================================== */
+
+@theme {
+  /* Colors mapped to CSS custom properties */
+  --color-theme-bg: var(--color-bg);
+  --color-theme-surface: var(--color-surface);
+  --color-theme-text: var(--color-text);
+  --color-theme-text-muted: var(--color-text-muted);
+  --color-theme-accent: var(--color-accent);
+  --color-theme-accent-alt: var(--color-accent-alt);
+  --color-theme-glass: var(--color-glass);
+  --color-theme-glass-border: var(--color-glass-border);
+  --color-theme-shadow: var(--color-shadow);
+  --color-theme-highlight: var(--color-highlight);
+
+  /* Font families */
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+/* ========================================================================
+   Default theme variables (Obsidian Storm)
+   Applied before JS hydrates so there's no flash of unstyled content.
+   ======================================================================== */
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-text: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-accent: #00f0ff;
+  --color-accent-alt: #8b5cf6;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.10);
+  --color-shadow: rgba(0, 240, 255, 0.15);
+  --color-highlight: rgba(139, 92, 246, 0.20);
+
+  --font-heading: var(--font-syne);
+  --font-body: var(--font-inter-tight);
+}
+
+/* ========================================================================
+   Per-theme overrides (set via data-theme attribute on <html>)
+   ======================================================================== */
+
+/* Obsidian Storm — same as :root defaults */
+[data-theme="obsidian"] {
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-text: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-accent: #00f0ff;
+  --color-accent-alt: #8b5cf6;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.10);
+  --color-shadow: rgba(0, 240, 255, 0.15);
+  --color-highlight: rgba(139, 92, 246, 0.20);
+
+  --font-heading: var(--font-syne);
+  --font-body: var(--font-inter-tight);
+}
+
+/* Solar Flare */
+[data-theme="solar"] {
+  --color-bg: #faf5eb;
+  --color-surface: #fff8ee;
+  --color-text: #1a1206;
+  --color-text-muted: #7a6e5d;
+  --color-accent: #e85d26;
+  --color-accent-alt: #d4a853;
+  --color-glass: rgba(255, 255, 255, 0.45);
+  --color-glass-border: rgba(212, 168, 83, 0.25);
+  --color-shadow: rgba(232, 93, 38, 0.12);
+  --color-highlight: rgba(212, 168, 83, 0.18);
+
+  --font-heading: var(--font-instrument-serif);
+  --font-body: var(--font-plus-jakarta-sans);
+}
+
+/* Arctic Glass */
+[data-theme="arctic"] {
+  --color-bg: #f0f4f8;
+  --color-surface: #f8fafc;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-accent: #3b82f6;
+  --color-accent-alt: #06d6a0;
+  --color-glass: rgba(255, 255, 255, 0.55);
+  --color-glass-border: rgba(59, 130, 246, 0.18);
+  --color-shadow: rgba(59, 130, 246, 0.10);
+  --color-highlight: rgba(6, 214, 160, 0.15);
+
+  --font-heading: var(--font-space-mono);
+  --font-body: var(--font-outfit);
+}
+
+/* Neon Brutalist */
+[data-theme="neon"] {
+  --color-bg: #000000;
+  --color-surface: #111111;
+  --color-text: #ffffff;
+  --color-text-muted: #999999;
+  --color-accent: #ff2d6b;
+  --color-accent-alt: #b5ff2d;
+  --color-glass: rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 45, 107, 0.30);
+  --color-shadow: rgba(255, 45, 107, 0.20);
+  --color-highlight: rgba(181, 255, 45, 0.18);
+
+  --font-heading: var(--font-bebas-neue);
+  --font-body: var(--font-jetbrains-mono);
+}
+
+/* Velvet Dusk */
+[data-theme="velvet"] {
+  --color-bg: #0f0a1a;
+  --color-surface: #1a1328;
+  --color-text: #ede8f5;
+  --color-text-muted: #8a7fa0;
+  --color-accent: #c9937a;
+  --color-accent-alt: #9d8ec7;
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --color-glass-border: rgba(157, 142, 199, 0.18);
+  --color-shadow: rgba(201, 147, 122, 0.15);
+  --color-highlight: rgba(157, 142, 199, 0.20);
+
+  --font-heading: var(--font-playfair-display);
+  --font-body: var(--font-dm-sans);
+}
+
+/* ========================================================================
+   Liquid Glass utility classes
+   ======================================================================== */
+
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: 0 8px 32px var(--color-shadow);
+}
+
+.glass-thick {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  box-shadow:
+    0 12px 48px var(--color-shadow),
+    0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+.glass-button {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+/* ========================================================================
+   Base styles
+   ======================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* ========================================================================
+   Accessibility — reduced motion
+   ======================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================================================
+   Accessibility — reduced transparency
+   ======================================================================== */
+
+@media (prefers-reduced-transparency) {
+  .glass,
+  .glass-thick,
+  .glass-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--color-surface);
+    opacity: 0.97;
+  }
+}
