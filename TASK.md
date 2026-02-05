@@ -6,7 +6,7 @@ It should be progressive modern landing page that presents [peacedata](https://p
 
 ## Core Goal
 
-You should build 5 landing pages options, that should use different colors, fonts, animations, layout. Be as much creative and inspired as possible. There also should be a buttons to switch between the pages.
+You should build 5 BRAND NEW UNIQUE landing pages options, that should use different colors, fonts, animations, CREATIVE LAYOUT THAT DIFFERENT FROM EACH OTHER PAGES. Be as much creative and inspired as possible. There also should be a buttons to switch between the pages. Use new, unique approach to the design.
 
 ## Structure
 
